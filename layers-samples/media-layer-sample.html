@@ -186,10 +186,25 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               video.currentTime = 0;
               video.play();
             } else if (buttonPressedThisFrame(source.gamepad, 1)) {
-              if (video.paused)
+              if (video.paused) {
+                console.log("1:play")
                 video.play();
-              else
+              }
+              else {
+                console.log("1:pause")
                 video.pause();
+              }
+            }else if(buttonPressedThisFrame(source.gamepad, 4)){
+              if (video.paused) {
+                console.log("4:play");
+                video.play();
+              }
+            }
+            else if(buttonPressedThisFrame(source.gamepad, 5)){
+              if (!video.paused) {
+                console.log("5:pause")
+                video.pause();
+              }
             }
           }
         }
